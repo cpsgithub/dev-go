@@ -1,0 +1,24 @@
+Ubuntuに最新のGolangをインストールする
+
+1. 公式のパッケージを取得する
+https://golang.org/dl/ から、Linux用のtar.gzのURLをコピーする。
+ (2020/8/23時点では https://dl.google.com/go/go1.15.linux-amd64.tar.gz)
+
+wget https://dl.google.com/go/go1.15.linux-amd64.tar.gz
+
+2. 展開して配置する
+sudo tar -C /usr/local -xzf go1.15.linux-amd64.tar.gz
+
+3. goコマンドのパスを通す
+export PATH=$PATH:/usr/local/go/bin
+
+4. goコマンド確認
+go version
+go version go1.15 linux/amd64
+
+5. shell再起動
+exec $SHELL -l
+
+6. 再度goコマンド確認(パスが通っていれば使える)
+go version
+go version go1.15 linux/amd64
